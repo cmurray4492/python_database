@@ -1,5 +1,5 @@
 # Import what you need from tkinter module
-from tkinter import Tk, Button, PhotoImage, Label, LabelFrame, W, E,N,S, Entry, END,StringVar ,Scrollbar,Toplevel
+from tkinter import Tk, Button, PhotoImage, Label, LabelFrame, W, E, N, S, Entry, END, StringVar, Scrollbar, Toplevel
 from tkinter import ttk   # Provides access to the Tk themed widgets.
 import sqlite3
 
@@ -7,11 +7,11 @@ import sqlite3
 class Contacts:
     db_filename = 'contacts.db'
 
-    def __init__(self,root):
+    def __init__(self, root):
         self.root = root
         self.create_gui()
         ttk.style = ttk.Style()
-        ttk.style.configure("Treeview", font=('helvetica',10))
+        ttk.style.configure("Treeview", font=('helvetica', 10))
         ttk.style.configure("Treeview.Heading", font=('helvetica', 12, 'bold'))
 
     def execute_db_query(self, query, parameters=()):
@@ -39,9 +39,10 @@ class Contacts:
         label.grid(row=0, column=0)
 
     def create_label_frame(self):
-        labelframe = LabelFrame(self.root, text='Create New Contact',bg="sky blue",font="helvetica 10")
+        labelframe = LabelFrame(self.root, text='Create New Contact', 
+                                bg="sky blue", font="helvetica 10")
         labelframe.grid(row=0, column=1, padx=8, pady=8, sticky='ew')
-        Label(labelframe, text='Name:',bg="green",fg="white").grid(row=1, column=1, sticky=W, pady=2, padx=15)
+        Label(labelframe, text='Name:', bg="green", fg="white").grid(row=1, column=1, sticky=W, pady=2, padx=15)
         self.namefield = Entry(labelframe)
         self.namefield.grid(row=1, column=2, sticky=W, padx=5, pady=2)
         Label(labelframe, text='Email:',bg="brown",fg="white").grid(row=2, column=1, sticky=W, pady=2, padx=15)
